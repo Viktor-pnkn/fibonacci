@@ -11,15 +11,15 @@ import ru.viktorpenkin.fibonacci.dto.NumDTO;
 public class FibController {
 
     @GetMapping("/{val}")
-    public NumDTO getValue(@PathVariable Integer val) {
+    public NumDTO getValue(@PathVariable Long val) {
         return new NumDTO(getFib(val));
     }
 
-    private Integer getFib(Integer val) {
-        int a = 0;
-        int b = 1;
-        int current = 0;
-        for (int i = 3; i <= val; i++) {
+    private Long getFib(Long val) {
+        Long a = 0L;
+        Long b = 1L;
+        Long current = 0L;
+        for (Long i = 3L; i <= val; i++) {
             current = b + a;
             a = b;
             b = current;

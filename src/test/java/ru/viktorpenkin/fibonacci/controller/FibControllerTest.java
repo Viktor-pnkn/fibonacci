@@ -20,12 +20,12 @@ public class FibControllerTest {
         int i = r.nextInt(10);
         ResponseEntity<NumDTO> forEntity = template.getForEntity("http://localhost:8082/fibonacci/" + i,
                 NumDTO.class);
-        Integer actual = forEntity.getBody().getValue();
+        Long actual = forEntity.getBody().getValue();
 
-        int a = 0;
-        int b = 1;
-        int expected = 0;
-        for (int j = 3; j <= i; j++) {
+        Long a = 0L;
+        Long b = 1L;
+        Long expected = 0L;
+        for (Long j = 3L; j <= i; j++) {
             expected = b + a;
             a = b;
             b = expected;
