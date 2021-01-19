@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.viktorpenkin.fibonacci.dto.CommonDTO;
 import ru.viktorpenkin.fibonacci.dto.NumDTO;
 
 @RestController
@@ -11,8 +12,8 @@ import ru.viktorpenkin.fibonacci.dto.NumDTO;
 public class FibController {
 
     @GetMapping("/{val}")
-    public NumDTO getValue(@PathVariable Long val) {
-        return new NumDTO(getFib(val));
+    public CommonDTO getValue(@PathVariable Long val) {
+        return new CommonDTO("FIB", getFib(val));
     }
 
     private Long getFib(Long val) {
